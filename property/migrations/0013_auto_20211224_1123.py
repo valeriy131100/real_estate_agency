@@ -8,7 +8,6 @@ def make_link_owners_to_flats(apps, schema_editor):
     Owner = apps.get_model('property', 'Owner')
 
     for owner in Owner.objects.all():
-        print(owner, owner.full_name)
         owner_flats = Flat.objects.filter(
             owner=owner.full_name,
             owners_phonenumber=owner.phone
